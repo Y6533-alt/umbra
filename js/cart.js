@@ -147,7 +147,7 @@
     var msg = drawer.querySelector(".bag-checkout-msg");
     var shop = window.UMBRA_SHOP;
     var paypal = window.UMBRA_PAYPAL;
-    if ((!shop || !shop.enabled) && paypal && paypal.enabled) {
+    if (usesPaypal) {
       btn.disabled = true;
       btn.textContent = "Opening PayPal…";
       location.href = paypal.checkoutUrl(items);
@@ -174,7 +174,10 @@
   // live prices and stock from Shopify
   document.addEventListener("umbra:shop-ready", render);
 
-  var usesPaypal = !(window.UMBRA_SHOP && window.UMBRA_SHOP.enabled) && window.UMBRA_PAYPAL && window.UMBRA_PAYPAL.enabled;
+  // PayPal takes payment when the config asks for it, or whenever Shopify isn't connected
+  var shopReady = window.UMBRA_SHOP && window.UMBRA_SHOP.enabled;
+  var wantsShopify = ((window.UMBRA_SHOP_CONFIG || {}).checkout || "paypal") === "shopify";
+  var usesPaypal = !!(window.UMBRA_PAYPAL && window.UMBRA_PAYPAL.enabled) && !(shopReady && wantsShopify);
   if (usesPaypal) {
     drawer.querySelector(".bag-pay-note").hidden = false;
     drawer.querySelector(".bag-checkout").textContent = "Checkout with PayPal";

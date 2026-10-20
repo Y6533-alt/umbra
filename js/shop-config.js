@@ -9,9 +9,13 @@
    ============================================================ */
 window.UMBRA_SHOP_CONFIG = {
   // e.g. "umbra-studio.myshopify.com" (the .myshopify.com domain, not your custom domain)
-  domain: "",
+  domain: "aznzxe-ae.myshopify.com",
   // Storefront API public access token from the Headless channel
-  token: "",
+  token: "d7c4b94d9a67304c9f7e1605751d0aca",
+  // Who takes payment at checkout: "paypal" or "shopify".
+  // Products, prices and stock always come from Shopify once domain/token are set.
+  // Switch to "shopify" after payments are activated in Shopify (Settings → Payments).
+  checkout: "paypal",
   // Storefront API version
   apiVersion: "2026-07",
   // Shopify product handle for each site product (the last part of the product URL in Shopify)
