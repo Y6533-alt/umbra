@@ -28,7 +28,7 @@ window.UMBRA_SHOP_CONFIG = {
      customer to PayPal with the bag filled in, and the money arrives in
      that account. Works with a personal PayPal account. */
   paypal: {
-    email: "",
+    email: "yuvalpeleg022@gmail.com",
     currency: "EUR"   // must match the prices in js/products.js
   }
 };
