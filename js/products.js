@@ -74,5 +74,32 @@ window.UMBRA_PRODUCTS = {
       "Drawcord hems with gunmetal cord-locks"
     ],
     fabric: "400 GSM cotton twill. Machine wash cold, hang to dry, warm iron inside out."
+  },
+  suit: {
+    id: "suit",
+    name: "The Suit",
+    price: 1490,
+    tagline: "Understated. Exact. Unmistakable.",
+    description: "A three-piece suit in midnight-black Italian wool with graphite undertones. The peak lapels carry a single line of graphite silk along their edge, the one detail that makes it ours. Jacket, waistcoat and trousers, finished with brushed gunmetal buttons.",
+    sizes: ["46", "48", "50", "52", "54", "56"],
+    soldOut: [],
+    fit: "Tailored modern fit with a sculpted waist and structured shoulders. EU jacket sizes; trousers are sized to match and can be hemmed to length.",
+    images: [
+      { src: "assets/suit-front.jpg", alt: "The Suit, front, with the waistcoat inside the jacket" },
+      { src: "assets/suit-back.jpg", alt: "The Suit, back" },
+      { src: "assets/suit-model.jpg", alt: "The Suit worn with a white shirt and black tie" },
+      { src: "assets/suit-ghost.jpg", alt: "The Suit under a single spotlight" },
+      { src: "assets/suit-lapel.jpg", alt: "Peak lapel with the graphite silk edge line" },
+      { src: "assets/suit-button.jpg", alt: "Brushed gunmetal button" }
+    ],
+    details: [
+      "Single-breasted one-button jacket with wide peak lapels",
+      "Graphite silk line along the edge of each lapel",
+      "Matching five-button waistcoat",
+      "Brushed gunmetal buttons, four-button working cuffs",
+      "Jetted hip pockets, welt breast pocket, tonal pick-stitching",
+      "Straight trousers with a pressed crease"
+    ],
+    fabric: "Italian wool with a soft matte finish, fully lined. Dry clean only; steam between wears."
   }
 };

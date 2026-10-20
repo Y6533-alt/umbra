@@ -7,7 +7,7 @@
   "use strict";
 
   var PRODUCTS = window.UMBRA_PRODUCTS || {};
-  var ORDER = ["hoodie", "tee", "trouser"];
+  var ORDER = ["hoodie", "tee", "trouser", "suit"];
   var id = new URLSearchParams(location.search).get("p");
   var p = PRODUCTS[id] || PRODUCTS[ORDER[0]];
   var selected = null;
@@ -21,6 +21,10 @@
     trouser: {
       head: ["Size", "Waist", "Hip", "Inseam", "Leg opening"],
       rows: [["28", 72, 108, 80, 30], ["30", 77, 112, 81, 31], ["32", 82, 116, 82, 32], ["34", 87, 120, 83, 33], ["36", 92, 124, 84, 34]]
+    },
+    suit: {
+      head: ["Size", "Chest", "Waist", "Jacket length", "Sleeve"],
+      rows: [["46", 92, 80, 72, 61], ["48", 96, 84, 73, 62], ["50", 100, 88, 74, 63], ["52", 104, 92, 75, 64], ["54", 108, 96, 76, 65], ["56", 112, 100, 77, 66]]
     }
   };
 
@@ -82,7 +86,7 @@
     $("sizeError").hidden = true;
   });
 
-  var guide = p.id === "trouser" ? GUIDES.trouser : GUIDES.top;
+  var guide = GUIDES[p.id] || GUIDES.top;
   $("sizeGuide").innerHTML =
     '<table><thead><tr>' + guide.head.map(function (h) { return '<th scope="col">' + h + "</th>"; }).join("") + "</tr></thead><tbody>" +
     guide.rows.map(function (r) {

@@ -18,7 +18,8 @@ window.UMBRA_SHOP_CONFIG = {
   handles: {
     hoodie: "the-hoodie",
     tee: "the-tee",
-    trouser: "the-trouser"
+    trouser: "the-trouser",
+    suit: "the-suit"
   },
   // Name of the variant option that holds the size
   sizeOption: "Size",

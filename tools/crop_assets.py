@@ -56,3 +56,17 @@ save(tee.crop((30, 1312, 506, 2003)), "note-collar.jpg")
 save(tee.crop((1036, 1312, 1514, 2003)), "note-emblem.jpg")
 save(tee.crop((1540, 1312, 2018, 2003)), "note-seam.jpg")
 save(pants.crop((1418, 1238, 2048, 1625)), "note-hardware.jpg")
+
+# The Suit: front/back from the board, details from its close-up column,
+# plus the floating suit and the campaign shot as wide gallery images
+suit = Image.open(SRC / "suit-board.png").convert("RGB")
+card(suit, (20, 90, 760, 2010), "suit-front.jpg", pad=0.05)
+card(suit, (740, 90, 1395, 2010), "suit-back.jpg", pad=0.05)
+save(suit.crop((1412, 0, 2048, 419)).resize((1000, 659), Image.LANCZOS), "suit-lapel.jpg")
+save(suit.crop((1412, 428, 2048, 801)).resize((1000, 587), Image.LANCZOS), "suit-button.jpg")
+save(suit.crop((1412, 810, 2048, 1201)).resize((1000, 615), Image.LANCZOS), "suit-waistcoat.jpg")
+save(suit.crop((1412, 1601, 2048, 2048)).resize((1000, 703), Image.LANCZOS), "suit-cuff.jpg")
+for name in ("suit-ghost", "suit-model"):
+    im = Image.open(SRC / f"{name}.png").convert("RGB")
+    im.thumbnail((1200, 1800), Image.LANCZOS)
+    save(im, f"{name}.jpg")
