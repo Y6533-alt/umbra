@@ -85,8 +85,8 @@ window.UMBRA_PRODUCTS = {
     soldOut: [],
     fit: "Tailored modern fit with a sculpted waist and structured shoulders. EU jacket sizes; trousers are sized to match and can be hemmed to length.",
     images: [
-      { src: "assets/suit-front.jpg", alt: "The Suit, front, with the waistcoat inside the jacket" },
-      { src: "assets/suit-back.jpg", alt: "The Suit, back" },
+      { src: "assets/suit-front.jpg?v=2", alt: "The Suit, front, with the waistcoat inside the jacket" },
+      { src: "assets/suit-back.jpg?v=2", alt: "The Suit, back" },
       { src: "assets/suit-model.jpg", alt: "The Suit worn with a white shirt and black tie" },
       { src: "assets/suit-ghost.jpg", alt: "The Suit under a single spotlight" },
       { src: "assets/suit-lapel.jpg", alt: "Peak lapel with the graphite silk edge line" },

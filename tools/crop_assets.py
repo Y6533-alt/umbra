@@ -40,6 +40,41 @@ def card(board, box, name, size=(1000, 1250), pad=0.08):
     save(canvas, name)
 
 
+def tall_card(src, box, name, size=(1000, 1250), pad=0.025):
+    """For tall garments (the suit): scale the region to nearly the full card
+    height and rebuild the side margins from the region's own edge columns,
+    row by row, so the studio gradient and glow continue with no visible box."""
+    region = src.crop(box)
+    h = round(size[1] * (1 - pad * 2))
+    w = round(region.width * h / region.height)
+    region = region.resize((w, h), Image.LANCZOS)
+    edge = 10
+    left = region.crop((0, 0, edge, h)).resize((1, h), Image.BOX)
+    right = region.crop((w - edge, 0, w, h)).resize((1, h), Image.BOX)
+    sides = Image.blend(left, right, 0.5)
+    # smooth the column vertically so per-row noise doesn't turn into streaks
+    sides = sides.resize((8, h)).filter(ImageFilter.GaussianBlur(40)).resize((1, h), Image.BOX)
+    canvas = sides.resize((size[0], h), Image.BILINEAR)
+    # a touch of fine grain so the rebuilt margins match the photo's texture
+    grain = Image.effect_noise((size[0], h), 6).convert("RGB")
+    canvas = Image.blend(canvas, Image.composite(canvas, grain, Image.new("L", (size[0], h), 245)), 1.0)
+    # extend the first/last rows into the top and bottom margins
+    full = Image.new("RGB", size)
+    top = (size[1] - h) // 2
+    full.paste(canvas.crop((0, 0, size[0], 1)).resize((size[0], top)), (0, 0))
+    full.paste(canvas, (0, top))
+    full.paste(canvas.crop((0, h - 1, size[0], h)).resize((size[0], size[1] - top - h)), (0, top + h))
+    # feather only the left/right edges of the garment region into it
+    mask = Image.new("L", (w, h), 255)
+    feather = max(20, w // 7)
+    for i in range(feather):
+        a = round(255 * i / feather)
+        mask.paste(a, (i, 0, i + 1, h))
+        mask.paste(a, (w - 1 - i, 0, w - i, h))
+    full.paste(region, ((size[0] - w) // 2, top), mask)
+    save(full, name)
+
+
 # Product cards (front + back of each piece)
 card(hoodie, (20, 360, 1030, 1560), "hoodie-front.jpg")
 card(hoodie, (1018, 360, 2028, 1560), "hoodie-back.jpg")
@@ -60,8 +95,8 @@ save(pants.crop((1418, 1238, 2048, 1625)), "note-hardware.jpg")
 # The Suit: front/back from the board, details from its close-up column,
 # plus the floating suit and the campaign shot as wide gallery images
 suit = Image.open(SRC / "suit-board.png").convert("RGB")
-card(suit, (20, 90, 760, 2010), "suit-front.jpg", pad=0.05)
-card(suit, (740, 90, 1395, 2010), "suit-back.jpg", pad=0.05)
+tall_card(suit, (20, 90, 760, 2010), "suit-front.jpg")
+tall_card(suit, (745, 90, 1395, 2010), "suit-back.jpg")
 save(suit.crop((1412, 0, 2048, 419)).resize((1000, 659), Image.LANCZOS), "suit-lapel.jpg")
 save(suit.crop((1412, 428, 2048, 801)).resize((1000, 587), Image.LANCZOS), "suit-button.jpg")
 save(suit.crop((1412, 810, 2048, 1201)).resize((1000, 615), Image.LANCZOS), "suit-waistcoat.jpg")
