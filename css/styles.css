@@ -54,7 +54,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   display:inline-flex;align-items:center;gap:10px;
   font-weight:600;font-size:17px;letter-spacing:.32em;
 }
-.wordmark .mark{width:18px;height:18px;fill:currentColor;flex:none}
+.wordmark .logo{display:block;height:18px;width:auto;flex:none}
+.footer-wordmark .logo{height:22px}
 .main-nav{display:flex;gap:8px;font-size:15px;font-weight:500}
 .main-nav .sep{opacity:.6}
 .main-nav a{opacity:.85;transition:opacity .25s}

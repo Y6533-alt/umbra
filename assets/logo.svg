@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#C9C6BF">
-  <!-- Broken square: two interlocking offset right angles -->
-  <path d="M3 3h15v4H7v11H3z"/>
-  <path d="M29 29H14v-4h11V14h4z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-22 -22 144 144"><rect x="-22" y="-22" width="144" height="144" rx="24" fill="#0B0B0C"/><g fill="#ECEAE5"><path d="M0.00 0.00 L58.00 0.00 L58.00 12.50 L12.50 12.50 L12.50 58.00 L0.00 58.00 Z"/><path d="M100.00 100.00 L42.00 100.00 L42.00 87.50 L87.50 87.50 L87.50 42.00 L100.00 42.00 Z"/></g></svg>
