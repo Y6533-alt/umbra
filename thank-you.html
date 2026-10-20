@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — UMBRA</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-product">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a href="index.html" class="wordmark" aria-label="UMBRA, home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h15v4H7v11H3z"/><path d="M29 29H14v-4h11V14h4z"/></svg>
+    UMBRA
+  </a>
+  <div class="header-right">
+    <button class="bag-btn" type="button" data-open-bag aria-label="Open bag">Bag (<span data-bag-count>0</span>)</button>
+  </div>
+</header>
+
+<main id="main" class="thanks">
+  <p class="eyebrow">Order received</p>
+  <h1 class="thanks-title">Thank you.</h1>
+  <p class="thanks-quote">Knowledge shows the way. Love gives it meaning.</p>
+  <p class="thanks-copy">Your payment went through PayPal, and a receipt is on its way to your email.<br>
+    We'll send tracking as soon as your order ships.</p>
+  <p class="thanks-ref" id="orderRef" hidden>Order reference: <strong></strong></p>
+  <a href="index.html" class="cta-link">Back to UMBRA</a>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>©UMBRA 2026</p>
+    <p>Made heavy, worn quiet</p>
+    <p><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/shop-config.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // Paid: empty the bag and show the order reference PayPal sent back
+  (function () {
+    var ref = new URLSearchParams(location.search).get("order");
+    if (ref && /^UMB-[\w-]+$/.test(ref)) {
+      var el = document.getElementById("orderRef");
+      el.querySelector("strong").textContent = ref;
+      el.hidden = false;
+      if (window.UMBRA_BAG) window.UMBRA_BAG.clear();
+    }
+  })();
+</script>
+</body>
+</html>

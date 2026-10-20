@@ -379,6 +379,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .product-name a:hover{text-decoration:underline;text-underline-offset:4px}
 .page-product .footer-bottom{border-top:0}
 
+/* ---------------- Thank-you page ---------------- */
+.thanks{
+  min-height:calc(100svh - 70px);
+  display:grid;align-content:center;justify-items:start;gap:18px;
+  padding:calc(var(--header-h) + 40px) var(--gutter) 80px;
+}
+.thanks .eyebrow{margin:0;max-width:none}
+.thanks-title{font-size:clamp(48px,7vw,110px);font-weight:600;letter-spacing:-0.04em;line-height:1}
+.thanks-quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.4vw,36px);color:var(--accent)}
+.thanks-copy{max-width:52ch;color:var(--grey);font-size:15.5px}
+.thanks-ref{font-size:14px;color:var(--grey)}
+.thanks-ref strong{color:var(--ink);font-weight:600;letter-spacing:.04em}
+.thanks .cta-link{margin-top:10px}
+
 /* ---------------- Bag drawer ---------------- */
 .bag{position:fixed;inset:0;z-index:400}
 .bag-scrim{position:absolute;inset:0;background:rgba(0,0,0,.6);opacity:0;transition:opacity .35s}

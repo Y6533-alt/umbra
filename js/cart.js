@@ -56,6 +56,7 @@
         '<div class="bag-row"><span>Subtotal</span><span class="bag-subtotal"></span></div>' +
         '<p class="bag-note">Shipping and taxes are calculated at checkout.</p>' +
         '<button class="btn btn-primary bag-checkout" type="button">Checkout</button>' +
+        '<p class="bag-note bag-pay-note" hidden>Secure payment with PayPal or card. Your bag stays here until payment is complete.</p>' +
         '<p class="bag-note bag-checkout-msg" role="status" hidden></p>' +
       '</div>' +
     '</aside>';
@@ -115,7 +116,7 @@
     document.documentElement.classList.remove("bag-open");
     var cb = drawer.querySelector(".bag-checkout");
     cb.disabled = false;
-    cb.textContent = "Checkout";
+    cb.textContent = usesPaypal ? "Checkout with PayPal" : "Checkout";
     drawer.querySelector(".bag-checkout-msg").hidden = true;
     setTimeout(function () { drawer.hidden = true; status.textContent = ""; }, 350);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
@@ -145,6 +146,13 @@
   function startCheckout(btn) {
     var msg = drawer.querySelector(".bag-checkout-msg");
     var shop = window.UMBRA_SHOP;
+    var paypal = window.UMBRA_PAYPAL;
+    if ((!shop || !shop.enabled) && paypal && paypal.enabled) {
+      btn.disabled = true;
+      btn.textContent = "Opening PayPal…";
+      location.href = paypal.checkoutUrl(items);
+      return;
+    }
     if (!shop || !shop.enabled) {
       msg.textContent = "Checkout opens with Drop 01. Join the list to be first in.";
       msg.hidden = false;
@@ -165,6 +173,12 @@
 
   // live prices and stock from Shopify
   document.addEventListener("umbra:shop-ready", render);
+
+  var usesPaypal = !(window.UMBRA_SHOP && window.UMBRA_SHOP.enabled) && window.UMBRA_PAYPAL && window.UMBRA_PAYPAL.enabled;
+  if (usesPaypal) {
+    drawer.querySelector(".bag-pay-note").hidden = false;
+    drawer.querySelector(".bag-checkout").textContent = "Checkout with PayPal";
+  }
 
   document.addEventListener("keydown", function (e) {
     if (drawer.hidden) return;
@@ -190,5 +204,9 @@
   });
 
   render();
-  window.UMBRA_BAG = { add: add, open: open };
+  window.UMBRA_BAG = {
+    add: add,
+    open: open,
+    clear: function () { items = []; save(); render(); }
+  };
 })();

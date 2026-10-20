@@ -21,5 +21,14 @@ window.UMBRA_SHOP_CONFIG = {
     trouser: "the-trouser"
   },
   // Name of the variant option that holds the size
-  sizeOption: "Size"
+  sizeOption: "Size",
+
+  /* ---------- PayPal (used while Shopify is not connected) ----------
+     Put the email of your PayPal account here. Checkout then sends the
+     customer to PayPal with the bag filled in, and the money arrives in
+     that account. Works with a personal PayPal account. */
+  paypal: {
+    email: "",
+    currency: "EUR"   // must match the prices in js/products.js
+  }
 };
