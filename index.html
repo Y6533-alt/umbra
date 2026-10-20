@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMBRA — Drop 01</title>
+<meta name="description" content="UMBRA is an independent label making heavyweight garments with architectural seams and quiet gunmetal hardware. Drop 01: the hoodie, the tee, the trouser.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <a href="#top" class="wordmark" aria-label="UMBRA, back to top">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h15v4H7v11H3z"/><path d="M29 29H14v-4h11V14h4z"/></svg>
+    UMBRA
+  </a>
+  <div class="header-right">
+  <nav class="main-nav" aria-label="Primary">
+    <a href="#work">Collection</a><span class="sep">,</span>
+    <a href="#atelier">Atelier</a><span class="sep">,</span>
+    <a href="#construction">Construction</a><span class="sep">,</span>
+    <a href="#updates">Notes</a><span class="sep">,</span>
+    <a href="#contact">The list</a>
+  </nav>
+    <button class="bag-btn" type="button" data-open-bag aria-label="Open bag">Bag (<span data-bag-count>0</span>)</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 1. HERO SLIDER ============ -->
+<section class="hero" id="top">
+  <div class="hero-slides">
+    <div class="hero-slide is-active" data-slide="0">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="A model walks away wearing the UMBRA hoodie with the sunset print, then a slow pass across the tee's emblem">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Drop 01 — Autumn / Winter 2026</p>
+        <h1 class="hero-headline">Built heavy.<br>Worn quiet.</h1>
+      </div>
+    </div>
+    <div class="hero-slide" data-slide="1">
+      <img class="focus-right" src="assets/hero-hoodie.jpg" alt="The UMBRA hoodie, front and back, with the sunset print and the line Knowledge shows the way, love gives it meaning">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">The Hoodie</p>
+        <h2 class="hero-headline">Knowledge shows the way.<br><em>Love gives it meaning.</em></h2>
+      </div>
+    </div>
+    <div class="hero-slide" data-slide="2">
+      <img class="focus-right" src="assets/cap-silhouette.jpg" alt="A model in the boxy UMBRA tee and wide-leg trousers, lit from behind in a dark studio">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">The Tee · The Trouser</p>
+        <h2 class="hero-headline">Three pieces.<br>Nothing more.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="hero-thumbs" role="tablist" aria-label="Choose slide">
+    <button class="hero-thumb is-active" role="tab" aria-selected="true" aria-label="Slide 1: film" data-goto="0"><img src="assets/hero-poster.jpg" alt=""></button>
+    <button class="hero-thumb" role="tab" aria-selected="false" aria-label="Slide 2: the hoodie" data-goto="1"><img src="assets/hero-hoodie.jpg" alt=""></button>
+    <button class="hero-thumb" role="tab" aria-selected="false" aria-label="Slide 3: the silhouette" data-goto="2"><img src="assets/cap-silhouette.jpg" alt=""></button>
+  </div>
+  <p class="hero-counter" aria-live="polite"><span id="heroCurrent">01</span>/03</p>
+</section>
+
+<!-- ============ 2. STATEMENT ============ -->
+<section class="statement" id="atelier">
+  <p class="eyebrow">Atelier</p>
+  <p class="fill-text">We make few things, slowly. Heavyweight garments with architectural seams and quiet hardware, built to be worn for years.</p>
+</section>
+
+<!-- ============ 3. COLLECTION ============ -->
+<section class="work" id="work">
+  <div class="section-head">
+    <h2 class="section-title">Drop 01</h2>
+    <a href="product.html?p=hoodie" class="view-all">Shop the drop</a>
+  </div>
+  <div class="product-grid">
+    <article class="product-card" data-rise>
+      <a href="product.html?p=hoodie" class="product-media" aria-label="UMBRA Hoodie">
+        <img src="assets/hoodie-front.jpg" alt="UMBRA Hoodie, front: boxy black fleece with a double-layer funnel hood" class="img-front">
+        <img src="assets/hoodie-back.jpg" alt="" class="img-back" loading="lazy">
+        <span class="product-tag">Back print</span>
+      </a>
+      <div class="product-info">
+        <h3 class="product-name"><a href="product.html?p=hoodie">The Hoodie</a></h3>
+        <p class="product-price" data-price-for="hoodie">€290</p>
+        <p class="product-meta">480 GSM loopback fleece · double-layer hood · sleeve zip pocket</p>
+      </div>
+    </article>
+    <article class="product-card" data-rise>
+      <a href="product.html?p=tee" class="product-media" aria-label="UMBRA Tee">
+        <img src="assets/tee-front.jpg" alt="UMBRA Tee, front: boxy black heavyweight tee with a chest yoke and gunmetal emblem" class="img-front">
+        <img src="assets/tee-back.jpg" alt="" class="img-back" loading="lazy">
+      </a>
+      <div class="product-info">
+        <h3 class="product-name"><a href="product.html?p=tee">The Tee</a></h3>
+        <p class="product-price" data-price-for="tee">€140</p>
+        <p class="product-meta">300 GSM jersey · centre-back seam with split vent</p>
+      </div>
+    </article>
+    <article class="product-card" data-rise>
+      <a href="product.html?p=trouser" class="product-media" aria-label="UMBRA Trouser">
+        <img src="assets/trouser-front.jpg" alt="UMBRA Trouser, front: black wide-leg twill with an asymmetric zip pocket" class="img-front">
+        <img src="assets/trouser-back.jpg" alt="" class="img-back" loading="lazy">
+      </a>
+      <div class="product-info">
+        <h3 class="product-name"><a href="product.html?p=trouser">The Trouser</a></h3>
+        <p class="product-price" data-price-for="trouser">€320</p>
+        <p class="product-meta">400 GSM cotton twill · sculpted waistband · cord-lock hems</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 4. CONSTRUCTION (PINNED) ============ -->
+<section class="capabilities" id="construction">
+  <div class="cap-pin">
+    <div class="cap-bgs">
+      <img src="assets/cap-fabric.jpg" alt="" class="cap-bg is-active">
+      <img src="assets/cap-seams.jpg" alt="" class="cap-bg" loading="lazy">
+      <img src="assets/cap-hardware.jpg" alt="" class="cap-bg" loading="lazy">
+      <img src="assets/cap-emblem.jpg" alt="" class="cap-bg" loading="lazy">
+      <img src="assets/cap-silhouette.jpg" alt="" class="cap-bg" loading="lazy">
+    </div>
+    <div class="cap-scrim"></div>
+    <p class="cap-label"><span class="cap-line"></span>Construction</p>
+    <ul class="cap-list">
+      <li class="is-active">Fabric</li>
+      <li>Seams</li>
+      <li>Hardware</li>
+      <li>Emblem</li>
+      <li>Silhouette</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5. NOTES ============ -->
+<section class="updates" id="updates">
+  <div class="section-head">
+    <h2 class="section-title">Notes</h2>
+    <div class="carousel-btns">
+      <button class="car-btn" id="carPrev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="car-btn" id="carNext" aria-label="Next">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="updates-viewport">
+    <div class="updates-track" id="updatesTrack">
+      <article class="update-card" data-rise>
+        <div class="update-media"><img src="assets/note-emblem.jpg" alt="Gunmetal embroidered broken-square emblem on black jersey" loading="lazy"></div>
+        <p class="update-meta">Note 01 · The mark</p>
+        <h3 class="update-title">The broken square, and why it never closes</h3>
+      </article>
+      <article class="update-card" data-rise>
+        <div class="update-media"><img src="assets/note-collar.jpg" alt="Thick ribbed collar of the UMBRA tee" loading="lazy"></div>
+        <p class="update-meta">Note 02 · Weight</p>
+        <h3 class="update-title">300 grams of jersey and a collar that keeps its shape</h3>
+      </article>
+      <article class="update-card" data-rise>
+        <div class="update-media"><img src="assets/note-seam.jpg" alt="Tonal double-needle topstitching where the yoke meets the side panel" loading="lazy"></div>
+        <p class="update-meta">Note 03 · Seams</p>
+        <h3 class="update-title">One seam down the back: a signature you read from across the room</h3>
+      </article>
+      <article class="update-card" data-rise>
+        <div class="update-media"><img src="assets/note-hardware.jpg" alt="Gunmetal zip pull, snap and cord-lock on black twill" loading="lazy"></div>
+        <p class="update-meta">Note 04 · Hardware</p>
+        <h3 class="update-title">Gunmetal, not chrome: hardware that disappears into black</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. CTA ============ -->
+<section class="cta" id="contact">
+  <p class="fill-text quote">Knowledge shows the way. Love gives it meaning.</p>
+  <a href="#newsEmail" class="cta-link">Join the list for Drop 01</a>
+</section>
+
+</main>
+
+<!-- ============ 7. FOOTER ============ -->
+<footer class="site-footer" id="footer">
+  <div class="footer-top">
+    <div class="footer-brandcol">
+      <a href="#top" class="wordmark footer-wordmark">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h15v4H7v11H3z"/><path d="M29 29H14v-4h11V14h4z"/></svg>
+        UMBRA
+      </a>
+      <p class="footer-tagline">Independent label.<br>Heavyweight cloth, architectural seams,<br>quiet gunmetal.</p>
+      <p class="footer-social"><a href="#">Instagram</a>, <a href="#">TikTok</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>E: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <p>Studio visits by appointment</p>
+    </div>
+    <nav class="footer-col" aria-label="Footer">
+      <h4>Explore</h4>
+      <a href="#work">Collection</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#construction">Construction</a>
+      <a href="#updates">Notes</a>
+      <a href="#">Shipping &amp; returns</a>
+      <a href="#">Privacy</a>
+    </nav>
+    <div class="footer-col footer-news">
+      <h4>The list</h4>
+      <p>First access to every drop.<br>No noise, a few emails a year.</p>
+      <form class="news-form" onsubmit="return false">
+        <label class="visually-hidden" for="newsEmail">Email address</label>
+        <input id="newsEmail" type="email" placeholder="your@email.com" autocomplete="email">
+        <button type="submit" aria-label="Join the list">→</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>©UMBRA 2026</p>
+    <p>Made heavy, worn quiet</p>
+    <p><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/shop-config.js"></script>
+<script src="js/shopify.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

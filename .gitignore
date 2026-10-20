@@ -1,0 +1,5 @@
+# Large source boards and raw video (rebuild crops with tools/crop_assets.py)
+assets/src/
+# Template instruction files from the ORBE package, kept local only
+AGENTS.md
+CLAUDE.md

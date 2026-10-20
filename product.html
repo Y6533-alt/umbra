@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMBRA — Drop 01</title>
+<meta name="description" content="UMBRA Drop 01: heavyweight garments with architectural seams and quiet gunmetal hardware.">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-product">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <a href="index.html" class="wordmark" aria-label="UMBRA, home">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 3h15v4H7v11H3z"/><path d="M29 29H14v-4h11V14h4z"/></svg>
+    UMBRA
+  </a>
+  <div class="header-right">
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html#work">Collection</a><span class="sep">,</span>
+      <a href="index.html#construction">Construction</a><span class="sep">,</span>
+      <a href="index.html#updates">Notes</a>
+    </nav>
+    <button class="bag-btn" type="button" data-open-bag aria-label="Open bag">Bag (<span data-bag-count>0</span>)</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ PRODUCT ============ -->
+<section class="pdp" id="pdp">
+  <div class="pdp-media">
+    <div class="pdp-gallery" id="pdpGallery" tabindex="0" aria-label="Product images, scroll to see more"></div>
+    <div class="pdp-dots" id="pdpDots" aria-hidden="true"></div>
+  </div>
+
+  <div class="pdp-info">
+    <p class="pdp-crumb"><a href="index.html#work">Drop 01</a> <span aria-hidden="true">/</span> <span id="pdpCrumb"></span></p>
+    <div class="pdp-title-row">
+      <h1 class="pdp-name" id="pdpName">Loading…</h1>
+      <p class="pdp-price" id="pdpPrice"></p>
+    </div>
+    <p class="pdp-tagline" id="pdpTagline"></p>
+    <p class="pdp-desc" id="pdpDesc"></p>
+
+    <form class="pdp-form" id="pdpForm" novalidate>
+      <fieldset class="size-field">
+        <legend class="size-legend">Size <span class="size-chosen" id="sizeChosen"></span></legend>
+        <div class="size-grid" id="sizeGrid"></div>
+      </fieldset>
+      <p class="pdp-fit" id="pdpFit"></p>
+      <p class="form-error" id="sizeError" role="alert" hidden>Choose a size first.</p>
+      <button class="btn btn-primary btn-wide" type="submit" id="addBtn">Add to bag</button>
+    </form>
+
+    <div class="pdp-acc">
+      <details open>
+        <summary>Details</summary>
+        <ul class="pdp-list" id="pdpDetails"></ul>
+      </details>
+      <details>
+        <summary>Size guide</summary>
+        <div class="size-guide" id="sizeGuide"></div>
+      </details>
+      <details>
+        <summary>Fabric &amp; care</summary>
+        <p id="pdpFabric"></p>
+      </details>
+      <details>
+        <summary>Shipping &amp; returns</summary>
+        <p>Free shipping on orders over €250. Delivered in 2–5 working days within the EU. Returns accepted within 30 days, unworn and with tags attached.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<noscript><p class="pdp-noscript">This page needs JavaScript to show the product. <a href="index.html#work">Back to the collection</a>.</p></noscript>
+
+<!-- ============ COMPLETE THE LOOK ============ -->
+<section class="work pdp-more" aria-labelledby="moreTitle">
+  <div class="section-head">
+    <h2 class="section-title" id="moreTitle">Complete the look</h2>
+    <a href="index.html#work" class="view-all">All of Drop 01</a>
+  </div>
+  <div class="product-grid product-grid-2" id="moreGrid"></div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="footer">
+  <div class="footer-bottom">
+    <p>©UMBRA 2026</p>
+    <p>Made heavy, worn quiet</p>
+    <p><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/shop-config.js"></script>
+<script src="js/shopify.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>
