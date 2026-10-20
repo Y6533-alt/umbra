@@ -95,8 +95,10 @@ save(pants.crop((1418, 1238, 2048, 1625)), "note-hardware.jpg")
 # The Suit: front/back from the board, details from its close-up column,
 # plus the floating suit and the campaign shot as wide gallery images
 suit = Image.open(SRC / "suit-board.png").convert("RGB")
-tall_card(suit, (20, 90, 760, 2010), "suit-front.jpg")
-tall_card(suit, (745, 90, 1395, 2010), "suit-back.jpg")
+# front/back are dedicated full-frame 4:5 shots, generated for the product card
+for view in ("front", "back"):
+    im = Image.open(SRC / f"suit-{view}-full.png").convert("RGB")
+    save(im.resize((1000, 1250), Image.LANCZOS), f"suit-{view}.jpg")
 save(suit.crop((1412, 0, 2048, 419)).resize((1000, 659), Image.LANCZOS), "suit-lapel.jpg")
 save(suit.crop((1412, 428, 2048, 801)).resize((1000, 587), Image.LANCZOS), "suit-button.jpg")
 save(suit.crop((1412, 810, 2048, 1201)).resize((1000, 615), Image.LANCZOS), "suit-waistcoat.jpg")
