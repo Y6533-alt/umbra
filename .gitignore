@@ -3,3 +3,5 @@ assets/src/
 # Template instruction files from the ORBE package, kept local only
 AGENTS.md
 CLAUDE.md
+# Shopify import file (regenerate with tools/build_shopify_csv.py)
+shopify-products.csv

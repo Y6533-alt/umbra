@@ -26,7 +26,7 @@
       cmd: "_cart",
       upload: "1",
       business: cfg.email,
-      currency_code: cfg.currency || "EUR",
+      currency_code: cfg.currency || window.UMBRA_CURRENCY || "ILS",
       invoice: ref,
       no_shipping: "2",   // ask the customer for a shipping address
       charset: "utf-8",

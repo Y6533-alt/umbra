@@ -28,10 +28,10 @@
   }
   function currency() {
     var first = items[0] && PRODUCTS[items[0].id];
-    return (first && first.currency) || "EUR";
+    return (first && first.currency) || window.UMBRA_CURRENCY || "ILS";
   }
   function money(n, cur) {
-    return new Intl.NumberFormat("en-IE", { style: "currency", currency: cur || currency(), maximumFractionDigits: 0 }).format(n);
+    return new Intl.NumberFormat("en-IE", { style: "currency", currency: cur || currency(), currencyDisplay: "narrowSymbol", maximumFractionDigits: 0 }).format(n);
   }
   function count() { return items.reduce(function (s, i) { return s + i.qty; }, 0); }
   function subtotal() { return items.reduce(function (s, i) { return s + PRODUCTS[i.id].price * i.qty; }, 0); }

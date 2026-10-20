@@ -1,8 +1,9 @@
 /* ============================================================
    UMBRA — product catalogue
    One entry per piece. product.html?p=<id> renders from this.
-   Prices are in EUR and are placeholders until final pricing.
+   Prices are in Israeli shekels (ILS), matching the Shopify store.
    ============================================================ */
+window.UMBRA_CURRENCY = "ILS";
 window.UMBRA_PRODUCTS = {
   hoodie: {
     id: "hoodie",

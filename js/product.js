@@ -30,7 +30,7 @@
 
   function $(s) { return document.getElementById(s); }
   function money(n, cur) {
-    return new Intl.NumberFormat("en-IE", { style: "currency", currency: cur || "EUR", maximumFractionDigits: 0 }).format(n);
+    return new Intl.NumberFormat("en-IE", { style: "currency", currency: cur || window.UMBRA_CURRENCY || "ILS", currencyDisplay: "narrowSymbol", maximumFractionDigits: 0 }).format(n);
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 

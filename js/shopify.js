@@ -83,7 +83,7 @@
         // static prices on the home page
         document.querySelectorAll("[data-price-for]").forEach(function (el) {
           var p = PRODUCTS[el.getAttribute("data-price-for")];
-          if (p) el.textContent = new Intl.NumberFormat("en-IE", { style: "currency", currency: p.currency || "EUR", maximumFractionDigits: 0 }).format(p.price);
+          if (p) el.textContent = new Intl.NumberFormat("en-IE", { style: "currency", currency: p.currency || window.UMBRA_CURRENCY || "ILS", currencyDisplay: "narrowSymbol", maximumFractionDigits: 0 }).format(p.price);
         });
         document.dispatchEvent(new CustomEvent("umbra:shop-ready"));
       }).catch(function (err) {

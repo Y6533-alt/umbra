@@ -30,6 +30,6 @@ window.UMBRA_SHOP_CONFIG = {
      that account. Works with a personal PayPal account. */
   paypal: {
     email: "yuvalpeleg022@gmail.com",
-    currency: "EUR"   // must match the prices in js/products.js
+    currency: "ILS"   // must match the prices in js/products.js
   }
 };
